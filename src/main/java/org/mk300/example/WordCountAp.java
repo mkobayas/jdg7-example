@@ -109,14 +109,12 @@ public class WordCountAp {
 
             log.debug("STREAM END");
             
-            // 出現回数で降順ソート
+            // 出現回数で降順ソートし、上位N番まで返却
             List<Map.Entry<String,Long>> result = 
                     collected.entrySet().stream()
                     .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                    .limit(topN)
                     .collect(Collectors.toList());
-            
-            // 上位N番まで返却
-            if(result.size() >= topN) result = result.subList(0, topN);
             
             return result;
         }
@@ -168,15 +166,13 @@ public class WordCountAp {
                             );
 
             log.info("STREAM END");
-            
-            // 出現回数で降順ソート
+
+            // 出現回数で降順ソートし、上位N番まで返却
             List<Map.Entry<String,Long>> result = 
                     collected.entrySet().stream()
                     .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                    .limit(topN)
                     .collect(Collectors.toList());
-            
-            // 上位N番まで返却
-            if(result.size() >= topN) result = result.subList(0, topN);
             
             return result;
         }
