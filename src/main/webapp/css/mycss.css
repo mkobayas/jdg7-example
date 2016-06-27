@@ -1,0 +1,51 @@
+* {
+    font-family: Meiryo, sans-serif;
+}
+
+header {
+	display:block;
+}
+
+main {
+    display:block;
+	overflow: hidden;
+}
+
+footer {
+    display:block;
+}
+
+#slotArea {
+    float: left;
+    width: 25%;
+}
+
+#chartArea {
+    float: right;
+    width: 74%;
+}
+
+H1 {
+    font-size: large;
+    border-bottom-style: double;
+}
+
+H3 {
+    font-size: small;
+    margin:10px 0 5px 0;
+    padding:5px 5px;
+    border-left:5px solid #800000;
+    background: #b22222;
+    color:#FFF;
+}
+
+#chart {
+	margin: 0 auto;
+    border: solid;color: gray;border-width: 1px;
+}
+
+#logArea {
+    margin: 0 auto;
+	font-size: xx-small;
+	width: 100%;
+}

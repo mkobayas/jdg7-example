@@ -12,6 +12,7 @@
         <distributed-cache-configuration name="myDistConf" mode="SYNC" owners="1" />
 
         <distributed-cache name="default" configuration="myDistConf" />
-        
+        <distributed-cache name="deliver" configuration="myDistConf" />
+                
     </cache-container>
 </infinispan>

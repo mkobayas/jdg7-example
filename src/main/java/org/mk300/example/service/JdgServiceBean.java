@@ -27,6 +27,7 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
 import org.infinispan.manager.DefaultCacheManager;
+import org.mk300.example.DeliverCacheListener;
 
 /**
  * 
@@ -49,6 +50,8 @@ public class JdgServiceBean {
             for (String cacheName : manager.getCacheNames()) {
                 manager.startCache(cacheName);
             }
+            
+            manager.getCache("deliver").addListener(new DeliverCacheListener());
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }

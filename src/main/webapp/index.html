@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JDG DistStream Demo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' id='style-css'  href='css/mycss.css' type='text/css' media='all' />
+</head>
+<body>
+    <header>
+        <H1>JDG DistStream Example 『こころ』</H1>
+    </header>
+    
+    <main>
+        <div id="slotArea">
+            <H3>データ投入</H3>
+            <input type="number" value="500" min="10" max="1000" id="records"></input>
+            <input type="button" value="データ投入" id="put"></input>
+        </div>
+    
+        <div id="chartArea">
+            <H3>直近1分間の品詞集計</H3>
+            <div id="chart"></div> 
+        </div>
+    </main>
+    
+    <footer>
+        <H3>WebSocket通知</H3>
+        <textarea rows="5" readonly wrap="soft" id="logArea"></textarea>
+        <div style="width: 90%" id="output"></div>
+    </footer>
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/myscript.js"></script>
+</body>
+</html>

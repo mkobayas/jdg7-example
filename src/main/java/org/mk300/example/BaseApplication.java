@@ -32,7 +32,7 @@ public class BaseApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> set = new HashSet<Class<?>>();
-        set.add(WordCountAp.class);
+        set.add(RestAp.class);
         return set;
     }
 }
