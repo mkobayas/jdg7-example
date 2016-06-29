@@ -10,8 +10,14 @@ websocket.onclose = function(evt) { onClose(evt) };
 websocket.onmessage = function(evt) { onMessage(evt) };
 websocket.onerror = function(evt) { onError(evt) };
 
-var output = document.getElementById("output");
-document.getElementById("put").onclick = function(evt) {put(evt)};
+putRecords.onclick = function(evt) {put(evt)};
+records.onkeypress = function(evt) {
+	if (evt.keyCode == 13) {
+		put(evt)
+	}
+};
+
+var logLines = [];
 
 function onOpen() {
     writeToScreen("Connected to " + wsUri);
@@ -42,12 +48,16 @@ function writeToLog(message) {
 	var sec = time.getSeconds();
 	var timeStr = hou + ":" + min + ":" + sec;
 	
-	var newText;
-	if(logArea.innerHTML != "") {
-		newText = logArea.innerHTML + "\n" + timeStr + " " + message;
-	} else {
-		newText = timeStr + " " + message;
+	logLines.push(timeStr + " " + message);
+	if(logLines.length > 100) {
+		logLines.shift();
 	}
+	
+	var newText = "";
+	for (var l in logLines) {
+		newText = newText + logLines[l] + "\n";
+	}
+
 	logArea.innerHTML = newText;
 	logArea.scrollTop = logArea.scrollHeight;  
 }
@@ -107,7 +117,7 @@ function init() {
 		},
 		chartArea: {width: '80%', height: '80%'}
 	};
-	chart = new google.visualization.BarChart(document.getElementById('chart'));
+	chart = new google.visualization.BarChart(chartDiv);
 	chart.draw(data, options);
 
 }
