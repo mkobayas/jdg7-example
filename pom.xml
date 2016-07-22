@@ -22,7 +22,7 @@
     </licenses>
     
     <properties>
-        <jdg.version>8.3.0.ER4-redhat-1</jdg.version>
+        <jdg.version>8.3.0.Final-redhat-1</jdg.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -66,20 +66,6 @@
             <id>JBoss-Enterprise-Maven-Repository</id>
             <name>repository</name>
             <url>https://maven.repository.redhat.com/ga</url>
-            <layout>default</layout>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-                <updatePolicy>never</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>JBoss-Enterprise-Maven-Repository-Early-Access</id>
-            <name>Early-access repository</name>
-            <url>https://maven.repository.redhat.com/earlyaccess/all</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
